@@ -1,0 +1,53 @@
+// This is a Protocol Buffer (protobuf) definition file.
+// Think of it as a "contract" or "blueprint" that both the client and server agree on.
+// It defines: what services exist, what methods they have, and what data shapes are used.
+
+// Step 1: Declare the syntax version.
+// "proto3" is the latest and simplest version of the protobuf language.
+// (proto2 exists but is older and more verbose — always use proto3 for new projects.)
+syntax = "proto3";
+
+// Step 2: Define a package name.
+// This is like a namespace — it prevents naming collisions if you have multiple .proto files.
+// In Python, this doesn't directly map to a Python package, but it's good practice.
+package greeting;
+
+// Step 3: Define the Service.
+// A "service" in gRPC is like a class with methods that a client can call remotely.
+// Think of it like a REST controller, but instead of URL endpoints, you define RPC methods.
+service Greeter {
+  // This is a "unary RPC" — the simplest type.
+  // The client sends ONE request and gets back ONE response. (Like a REST GET or POST.)
+  // "SayHello" is the method name.
+  // "HelloRequest" is the input message (what the client sends).
+  // "HelloReply" is the output message (what the server sends back).
+  rpc SayHello (HelloRequest) returns (HelloReply);
+  rpc SayBye (ByeRequest) returns (ByeReply);
+}
+
+// Step 4: Define the Messages (data structures).
+// Messages are like JSON objects or Python dataclasses — they define the shape of your data.
+// But unlike JSON, protobuf messages are strongly typed and serialized to compact binary.
+
+// The request message — what the client sends to the server.
+message HelloRequest {
+  // Each field has: a type, a name, and a unique field number.
+  // "string" = the data type (like str in Python).
+  // "name" = the field name (like a JSON key).
+  // "= 1" = the field number (used internally for binary encoding, NOT the value).
+  //          Field numbers must be unique within a message. They are how protobuf
+  //          identifies fields in the compact binary format. Think of them as column IDs.
+  string name = 1;
+}
+
+// The response message — what the server sends back to the client.
+message HelloReply {
+  // "message" is the field name that will hold our greeting string.
+  string message = 1;
+}
+
+message ByeRequest {}
+
+message ByeReply {
+  string message = 1;
+}
