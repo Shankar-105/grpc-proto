@@ -1,6 +1,8 @@
 # gRPC from First Principles — A Complete Beginner's Guide
 
-> **Who this is for:** You know REST APIs and WebSockets, but have never touched gRPC. This guide explains everything from scratch with analogies, then builds a working Python example you can run yourself.
+> **Who this is for:** You know REST APIs, but have never touched gRPC. This guide explains everything from scratch with analogies, then builds a working Python example you can run yourself without any proxy server!
+
+Come on Guys get Started with this comprehensive guide 
 
 ---
 
@@ -1293,4 +1295,4 @@ Congratulations! You've just built your first gRPC service. Here's a roadmap for
 
 ---
 
-*Guide created as part of gRPC learning practice. Happy coding!*
+*Guide created as part of gRPC learning practice!*

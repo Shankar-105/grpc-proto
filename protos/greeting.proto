@@ -22,6 +22,8 @@ service Greeter {
   // "HelloRequest" is the input message (what the client sends).
   // "HelloReply" is the output message (what the server sends back).
   rpc SayHello (HelloRequest) returns (HelloReply);
+
+  // ignore this rpc method just a part of my practice
   rpc SayBye (ByeRequest) returns (ByeReply);
 }
 
@@ -46,6 +48,7 @@ message HelloReply {
   string message = 1;
 }
 
+// ignore these two rpc mesages and there implementations in server.py these are just a part of my practice...
 message ByeRequest {}
 
 message ByeReply {
