@@ -173,7 +173,6 @@ def serve():
     # Without this line, the script would start the server and immediately exit!
     server.wait_for_termination()
 
-
 # ──────────────────────────────────────────────────────
 # ENTRY POINT
 # ──────────────────────────────────────────────────────
